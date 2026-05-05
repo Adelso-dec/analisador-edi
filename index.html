@@ -720,10 +720,10 @@
       </svg>
     </div>
     <h2 class="upload-title">Painel DI Colgate — Neogrid</h2>
-    <p class="upload-sub">Importe o arquivo de extração DI no formato <strong>.TXT</strong> (Flat File Posicional, padrão Neogrid V4.0.7) para visualizar vendas, estoque, notas fiscais e hierarquia.</p>
+    <p class="upload-sub">Importe o arquivo de extração DI no formato <strong>.txt</strong> (Flat File Posicional, padrão Neogrid V4.0.7) para visualizar vendas, estoque, notas fiscais e hierarquia.</p>
 
     <div class="drop-area" id="dropArea">
-      <input type="file" id="fileInput" accept=".TXT">
+      <input type="file" id="fileInput" accept=".txt">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#9B978E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/>
         <path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/>
@@ -743,7 +743,7 @@
     <div class="upload-specs">
       <p><strong>Formato:</strong> Flat File Posicional · ANSI · PC/Windows</p>
       <p><strong>Registros suportados:</strong> 01 Cabeçalho · 02 Vendedor · 03 Cliente · 04 Vendas · 05 Estoque · 06 Nota Fiscal · 07 Produtos</p>
-      <p><strong>Nome esperado:</strong> DIColgate_CNPJ_AAAAMMDDHHMMSS.TXT</p>
+      <p><strong>Nome esperado:</strong> DIColgate_CNPJ_AAAAMMDDHHMMSS</p>
     </div>
   </div>
 </div>
@@ -1134,8 +1134,8 @@ dropArea.addEventListener('drop', e => {
 fileInput.addEventListener('change', e => { if (e.target.files[0]) handleFile(e.target.files[0]); });
 
 function handleFile(file) {
-  if (!file.name.endsWith('.TXT')) {
-    showError('O arquivo deve ser do tipo .TXT (Flat File Posicional).');
+  if (!file.name.toLowerCase().endsWith('.txt')) {
+    showError('O arquivo deve ser do tipo .txt (Flat File Posicional).');
     return;
   }
   hideError();
